@@ -1,32 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Page Title</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+{%  extends 'base.html.twig' %}
 
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+{% block title %} Foo page! {% endblock %}
+{% block body %}
 
-</head>
-<body>
 
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ path("hello_page") }}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path("foo") }}">FooController</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
+
 
 <main class="container main">
+
+
     <h1>Some heading!</h1>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat maximus rhoncus. Maecenas lobortis augue
@@ -39,5 +21,4 @@
     </p>
 </main>
 
-</body>
-</html>
+{% endblock %}

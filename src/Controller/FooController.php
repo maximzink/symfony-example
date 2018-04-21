@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use http\Env\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -16,4 +17,29 @@ class FooController extends AbstractController
             'controller_name' => 'FooController',
         ]);
     }
+    /**
+     * @Route("/", name="hello_page")
+     */
+    public function hello(\Symfony\Component\HttpFoundation\Request $request){
+
+        $someName = $request->query->get("name");
+        return $this->render('hello_page.html.twig',
+            ['someAwesomeVariable' => 'Welcome from FooController', 'getName' => $someName]);
+    }
+
+
+
+    /**
+     * @Route("/blog/{page}", name="single_page", requirements={"page"="[A-Za-z]+"})
+     * @param string $page
+     *
+     */
+
+    public function page(string $page)
+    {
+        return $this->render('foo/page.html.twig', ['blogPage' => $page]);
+    }
+
+
+
 }
